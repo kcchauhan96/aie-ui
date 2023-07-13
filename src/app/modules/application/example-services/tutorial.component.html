@@ -3,25 +3,60 @@
     <div class="col-4" ><span (click)="goBack()" style="cursor: pointer;"><i class="fa-solid fa-less-than"  ></i>&nbsp;Back</span></div>
     
   <div class="col-8">
-    <h1 class="h5"> Let's improve your day to day search with a tinch of AI:</h1>
+    <h1 class="h5">Let's improve your day to day search with a tinch of AI:</h1>
     
   </div>
   <hr class="mt-2">
 </div>
   <div class="row  justify-content-center">
-    <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
-      <div class="text-center col mb-4">
-        <div class="card bg-light p-4 text-center">
-         
-          <div class="card-body" >
-           
+    <div class="col-12 col-sm-">
+      <div class="text-center col mb-4 mt-3">
+        <div class="input-group  mb-3">
+          <input type="text" class="form-control" placeholder="Search for a trade..." aria-label="Trade-Search" aria-describedby="basic-addon2" #filter>
+          <div class="input-group-append">
+            <button class="btn btn-outline-secondary" type="button" (click)="filterResults(filter.value)"><i class="fa fa-search"></i></button>
           </div>
-          
         </div>
       </div>
 
     </div>
 
   </div>
-
+  <div class="row text-center mb-3 mt-5">
+    <h4><b> Matched Trades </b></h4>
+  </div>
+  <div class="row">
+    <div class="col-12">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Trade ID</th>
+                    <th scope="col">Counterparty Name</th>
+                    <th scope="col">Trade Date</th>
+                    <th scope="col">Effective Date</th>
+                    <th scope="col">Currency</th>
+                    <th scope="col">No. of options</th>
+                    <th scope="col">Strike Price</th>
+                    <th scope="col">Index</th>
+                    <th scope="col">Maturity Date</th>
+                    <th scope="col">Notional</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let tradeDetail of filteredTradeDetails;">
+                  <td>{{tradeDetail.tradeId}}</td>
+                  <td>{{tradeDetail.counterpartyName}}</td>
+                  <td>{{tradeDetail.tradeDate}}</td>
+                  <td>{{tradeDetail.effectiveDate}}</td>
+                  <td>{{tradeDetail.currency}}</td>
+                  <td>{{tradeDetail.noOfOptions}}</td>
+                  <td>{{tradeDetail.strikePrice}}</td>
+                  <td>{{tradeDetail.index}}</td>
+                  <td>{{tradeDetail.maturityDate}}</td>
+                  <td>{{tradeDetail.notional}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
 </div>
