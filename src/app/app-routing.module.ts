@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { NotFoundComponent } from './modules/general/not-found/not-found.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/landing-page', pathMatch: 'full'  },
@@ -33,8 +32,7 @@ const routes: Routes = [
     path: 'about',
     loadChildren: () => import('./modules/general/about/about.module')
       .then(mod => mod.AboutModule)
-  },
-  { path: '**', component: NotFoundComponent }
+  }
 ];
 
 @NgModule({

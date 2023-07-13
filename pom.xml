@@ -54,7 +54,7 @@
 							<goal>install-node-and-npm</goal>
 						</goals>
 						<configuration>
-							<nodeVersion>v12.16.1</nodeVersion>
+							<nodeVersion>v18.16.1</nodeVersion>
 							<nodeDownloadRoot>https://nodejs.org/dist/</nodeDownloadRoot>
 							<!-- <npmVersion>7.6.1</npmVersion> -->
 
@@ -93,7 +93,7 @@
 							<outputDirectory>${basedir}/target/classes/static</outputDirectory>
 							<resources>
 								<resource>
-									<directory>${basedir}/dist/aie-ui/</directory>
+									<directory>${basedir}dist/angular-starter/browser</directory>
 								</resource>
 							</resources>
 						</configuration>
