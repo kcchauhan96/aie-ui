@@ -1,0 +1,59 @@
+<div class="container pt-5">
+    <div class="row">
+        <div class="col-4"><span (click)="goBack()" style="cursor: pointer;"><i
+                    class="fa-solid fa-less-than"></i>&nbsp;Back</span></div>
+
+        <div class="col-8">
+            <div class="row">
+                <div class="col-7">
+                    <h1 class="h5"> Alleged Trades to Confirmations:</h1>
+                </div>
+                <div class="col-5">
+                    <div class="row">
+                        <div class="col-4">
+                            <span>Selected Confirmation:</span>
+                        </div>
+                            <div class="col-8">
+                                <select class="form-select" aria-label="Confo Names">
+                                    <option selected *ngFor="let confo of confoList; let element = index;" [selected]="confo === selectedConfo">{{confo}}</option>
+                                  </select>
+                            </div>
+                           
+                        
+                    </div>
+                   
+                </div>
+            </div>           
+
+        </div>
+        <hr class="mt-2">
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Trade Id</th>
+                        <th scope="col">Confidence Percentage</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let confoTrade of confoTrades; let indexElement=index;">
+                        <th scope="row">{{indexElement+1}}</th>
+                        <td><a (click)="goToPdfComparison(confoTrade.tradeId)">{{confoTrade.tradeId}}</a></td>
+                        <td>
+                            <div class="progress">
+                                <div class="progress-bar progress-bar-striped" role="progressbar"
+                                    [style.width.%]="confoTrade.confidencePercentage" aria-valuemin="0"
+                                    aria-valuemax="100"
+                                    [ngClass]="{'bg-success': confoTrade.confidencePercentage >= 85 , 'bg-info': (confoTrade.confidencePercentage >= 65 && confoTrade.confidencePercentage <= 84) , 'bg-danger': confoTrade.confidencePercentage <= 64}">
+                                    {{confoTrade.confidencePercentage}}%</div>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
