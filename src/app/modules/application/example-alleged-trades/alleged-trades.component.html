@@ -41,7 +41,7 @@
                 <tbody>
                     <tr *ngFor="let confoTrade of confoTrades; let indexElement=index;">
                         <th scope="row">{{indexElement+1}}</th>
-                        <td><a (click)="goToPdfComparison(confoTrade.tradeId)">{{confoTrade.tradeId}}</a></td>
+                        <td><a (click)="goToPdfComparison(confoTrade.tradeId)" class="link">{{confoTrade.tradeId}}</a></td>
                         <td>
                             <div class="progress">
                                 <div class="progress-bar progress-bar-striped" role="progressbar"

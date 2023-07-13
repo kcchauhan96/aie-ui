@@ -11,6 +11,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { HeaderModule } from './components/header/header.module';
 import { FooterModule } from './components/footer/footer.module';
 import { HomeComponent } from './modules/general/home/home.component';
+import { PdfViewerModule } from 'ng2-pdf-viewer';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { HomeComponent } from './modules/general/home/home.component';
     HttpClientModule,
     HeaderModule,
     FooterModule,
+    PdfViewerModule
   ],
   providers: [],
   bootstrap: [AppComponent]
