@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ConfoDifferenceComponent } from './confo-difference.component';
 import { TutorialRoutingModule } from './confo-difference-routing.module';
+import { PdfViewerModule } from 'ng2-pdf-viewer';
+import { NgxExtendedPdfViewerModule } from 'ngx-extended-pdf-viewer';
 
 
 
@@ -11,7 +13,9 @@ import { TutorialRoutingModule } from './confo-difference-routing.module';
   ],
   imports: [
     CommonModule,
-    TutorialRoutingModule
+    TutorialRoutingModule,
+    NgxExtendedPdfViewerModule,
+    PdfViewerModule
   ],
   exports:[
     ConfoDifferenceComponent

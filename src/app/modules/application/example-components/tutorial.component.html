@@ -21,7 +21,7 @@
         <tbody>
           <tr *ngFor="let confoTrade of confoTrades; let indexElement=index;">
             <th scope="row">{{indexElement+1}}</th>
-            <td ><a (click)="routeToConfoDetails(confoTrade.confoPdf)" style="cursor: pointer; color:blue; border-bottom: 1px solid blue;">{{confoTrade.confoPdf}}</a></td>
+            <td ><a (click)="routeToConfoDetails(confoTrade.confoPdf)" class="link">{{confoTrade.confoPdf}}</a></td>
             <td>{{confoTrade.tradeDetails.tradeId}}</td>
             <td [ngClass]="{'text-success': confoTrade.status === 'AI Matched' , 'text-secondary': confoTrade.status === 'Yet to be matched', 'text-danger': confoTrade.status === 'Could not Match'}">{{confoTrade.status}}</td>
           </tr>

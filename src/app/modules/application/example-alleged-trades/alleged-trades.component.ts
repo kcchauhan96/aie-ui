@@ -81,7 +81,7 @@ export class AllegedTradesComponent implements OnInit {
 
   goToPdfComparison(selectedTrade:number){
     this.commonService.setSelectedTrade(selectedTrade);
-    this.router.navigate(['/confo-details']);
+    this.router.navigate(['/confo-difference']);
   }
 
 }

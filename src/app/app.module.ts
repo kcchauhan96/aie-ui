@@ -3,20 +3,18 @@ import { NgModule, isDevMode } from '@angular/core';
 
 import { AppComponent } from './app.component';
 
-import { NotFoundComponent } from './modules/general/not-found/not-found.component';
 import { AppRoutingModule } from './app-routing.module';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { HttpClientModule } from '@angular/common/http';
 
 import { HeaderModule } from './components/header/header.module';
 import { FooterModule } from './components/footer/footer.module';
-import { HomeComponent } from './modules/general/home/home.component';
+
+import { PdfViewerModule } from 'ng2-pdf-viewer';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    HomeComponent,
-    NotFoundComponent,
+    AppComponent
   ],
   imports: [
     BrowserModule,
@@ -30,6 +28,7 @@ import { HomeComponent } from './modules/general/home/home.component';
     HttpClientModule,
     HeaderModule,
     FooterModule,
+    PdfViewerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

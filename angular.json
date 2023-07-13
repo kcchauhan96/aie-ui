@@ -23,6 +23,11 @@
             "assets": [
               "src/favicon.ico",
               "src/assets",
+              {
+                "glob": "**/*",
+                "input": "node_modules/ngx-extended-pdf-viewer/bleeding-edge/",
+                "output": "/bleeding-edge/"
+              },
               "src/manifest.webmanifest",
               "src/sitemap.xml",
               "src/robots.txt"
