@@ -1,0 +1,75 @@
+<div class="container pt-5">
+    <div class="row">
+        <div class="col-4"><span (click)="goBack()" style="cursor: pointer;"><i
+                    class="fa-solid fa-less-than"></i>&nbsp;Back</span></div>
+        <div class="col-8">
+
+            <div class="row">
+                <div class="col-8">
+                    <h1 class="h5"> Client Confirmation vs DB Confirmation</h1>
+                </div>
+                <div class="col-4">
+                    <span>Selected Trade: {{tradeSelected}}</span>
+                </div>
+
+            </div>
+        </div>
+
+        <hr class="mt-2">
+    </div>
+    <div class="row ">
+        <div class="col-6 pdfStyle">
+            <strong>Client:</strong>
+            <pdf-viewer [src]="pdfFilePath1" [render-text]="true" [original-size]="false"
+            style="width: 100%; height: 100%"></pdf-viewer>
+        </div>
+        <div class="col-6 pdfStyle">
+            <strong>DB:</strong>
+            <pdf-viewer [src]="pdfFilePath2" [render-text]="true" [original-size]="false"
+            style="width: 100%; height: 100%"   ></pdf-viewer>
+        </div>
+
+    </div>
+    <div class="row mt-5">
+        <div class="col-6">
+            <p> Trade details:</p>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Trade Id</th>
+                        <th scope="col">Confidence Percentage</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>1233</td>
+                        <td>50</td>
+                    </tr>
+                </tbody>
+                
+            </table>
+
+        </div>
+        <div class="col-6">
+            <p> Trade details:</p>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Trade Id</th>
+                        <th scope="col">Confidence Percentage</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>1233</td>
+                        <td>50</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

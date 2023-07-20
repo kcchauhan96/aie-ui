@@ -1,0 +1,32 @@
+<div class="container pt-5">
+  <div class="row">
+    <div class="col-4" ><span (click)="goBack()" style="cursor: pointer;"><i class="fa-solid fa-less-than"  ></i>&nbsp;Back</span></div>
+  <div class="col-8">
+    <h1 class="h5"> Confirmation Match Details:</h1>
+    
+  </div>
+  <hr class="mt-2">
+</div>
+  <div class="row">
+    <div class="col-12">
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Client Confo</th>
+            <th scope="col">Trade Details</th>
+            <th scope="col">Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let confoTrade of confoTrades; let indexElement=index;">
+            <th scope="row">{{indexElement+1}}</th>
+            <td ><a (click)="routeToConfoDetails(confoTrade.confoPdf)" class="link">{{confoTrade.confoPdf}}</a></td>
+            <td>{{confoTrade.tradeDetails.tradeId}}</td>
+            <td [ngClass]="{'text-success': confoTrade.status === 'AI Matched' , 'text-secondary': confoTrade.status === 'Yet to be matched', 'text-danger': confoTrade.status === 'Could not Match'}">{{confoTrade.status}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
